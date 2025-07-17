@@ -1,11 +1,6 @@
-from stats import print_book_report
-
 import sys
 
-def get_book_text(file_name):
-    with open(file_name) as f:
-        return f.read()
-
+from stats import print_book_report
 
 def main():
     if len(sys.argv) < 2:
@@ -13,6 +8,5 @@ def main():
         sys.exit(1)
 
     print_book_report(sys.argv[1])
-
 
 main()
