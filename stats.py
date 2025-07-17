@@ -23,3 +23,21 @@ def convert_dict(input_dict):
     items = [{"char": k, "num": v} for k, v in input_dict.items()]
     sorted_items = sorted(items, key=lambda x: x["num"], reverse=True)
     return sorted_items
+
+def print_book_report(file_name):
+    print("============ BOOK REPORT ============")
+    print(f'Analyzing book found at {file_name}...')
+    
+    num_words = get_num_words(file_name)
+    print("----------- Word Count ----------")
+    print(f'Found {num_words} total words')
+    
+    letter_counts = get_letter_counts(file_name)
+    sorted_counts = convert_dict(letter_counts)
+    
+    print("--------- Character Count -------")
+    for item in sorted_counts:
+        print(f"{item['char']}: {item['num']}")
+    
+    print("============= END ===============")
+
